@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Superior de Profesorado N°63</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header-hero-container">
+        <header class="header">
+            <div class="logo">
+                <img src="img/Logo-ISP-63.png" alt="Logo ISP N°63">
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Carreras</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Institucional</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="login-signup">
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up</button>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>
+                    <span class="title-white">Instituto Superior de Profesorado N° 63</span><br>
+                    <span class="title-black">"Natalia Quessús"</span>
+                </h1>
+                <div class="hero-buttons">
+                    <button class="btn-primary">CARRERAS</button>
+                    <button class="btn-secondary">NOTICIAS</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/libro.jpg" alt="Estudiante trabajando en computadora">
+            </div>
+        </section>
+    </div>
+    
+    <section class="info-cards">
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Sede Las Toscas</h3>
+            <p>Calle 19 N°411 Las Toscas - Santa Fe</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Teléfono</h3>
+            <p>+54 3482 1234567<br>+54 3482 9876543</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-envelope"></i>
+            <h3>Correo</h3>
+            <p>institutoisp63@isp.com</p>
+        </div>
+    </section>
+
+    <section class="careers">
+        <h2>Nuestras Carreras</h2>
+        <div class="career-list">
+            <div class="career">
+                <img src="img/literatura.jpg" alt="Profesorado en Lengua y Literatura">
+                <h3>Profesorado en Lengua y Literatura</h3>
+                <button>Más info ></button>
+            </div>
+            <div class="career">
+                <img src="img/primaria.jpeg" alt="Profesorado de Educación Primaria">
+                <h3>Profesorado de Educación Primaria</h3>
+                <button>Más info ></button>
+            </div>
+            <div class="career">
+                <img src="img/software.jpg" alt="Tecnicatura en Desarrollo de Software">
+                <h3>Tecnicatura en Desarrollo de Software</h3>
+                <button>Más info ></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <h2>Últimas Noticias</h2>
+        
+        <!-- Noticia Principal -->
+        <div class="main-news">
+            <div class="main-news-image">
+                <img src="img/NOTICIAS.jpg" alt="Noticia Principal">
+            </div>
+            <div class="main-news-content">
+                <h3>Título de la Noticia Principal</h3>
+                <p>Descripción breve de la noticia principal que puede expandirse más tarde...</p>
+                <button class="btn-read-more">Leer más</button>
+            </div>
+        </div>
+    
+        <!-- Tarjetas de Noticias -->
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="img/NOTICIAS2.jpg" alt="Noticia 1">
+                <h4>Título de Noticia 1</h4>
+                <p>Descripción breve de la noticia 1...</p>
+            </div>
+            <div class="news-card">
+                <img src="img/NOTICIAS3.jpg" alt="Noticia 2">
+                <h4>Título de Noticia 2</h4>
+                <p>Descripción breve de la noticia 2...</p>
+            </div>
+            <div class="news-card">
+                <img src="img/NOTICIAS4.jpg" alt="Noticia 3">
+                <h4>Título de Noticia 3</h4>
+                <p>Descripción breve de la noticia 3...</p>
+            </div>
+            <div class="news-card">
+                <img src="img/NOTICIAS5.jpg" alt="Noticia 4">
+                <h4>Título de Noticia 4</h4>
+                <p>Descripción breve de la noticia 4...</p>
+            </div>
+            <div class="news-card">
+                <img src="img/NOTICIAS6.jpg" alt="Noticia 5">
+                <h4>Título de Noticia 5</h4>
+                <p>Descripción breve de la noticia 5...</p>
+            </div>
+            <div class="news-card">
+                <img src="img/NOTICIAS.jpg" alt="Noticia 6">
+                <h4>Título de Noticia 6</h4>
+                <p>Descripción breve de la noticia 6...</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="footer">
+        <p>&copy; 2024 Instituto Superior de Profesorado N°63</p>
+    </section>
+
+    <script src="js/scripts.js"></script> <!-- Tu archivo de scripts principales -->
+    
+    <script>
+        document.addEventListener("scroll", function() {
+            const careers = document.querySelectorAll('.career');
+            careers.forEach(career => {
+                const position = career.getBoundingClientRect().top;
+                if (position < window.innerHeight) {
+                    career.classList.add('appear');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
