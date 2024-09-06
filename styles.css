@@ -13,7 +13,6 @@ body {
     background-color: #f4f4f9;
     color: #333;
     font-family: 'Poppins', sans-serif;
-
 }
 
 .header-hero-container {
@@ -28,7 +27,8 @@ body {
 .header {
     background: linear-gradient(180deg, #003366 0%, #4a89c7 100%);
     color: white;
-    padding: 15px 30px;
+    padding: 10px 30px; /* Ajusta el padding si es necesario */
+    height: 70px; /* Ajusta la altura total del header */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,6 +37,7 @@ body {
 .header .logo img {
     height: 80px;
     transition: transform 0.3s ease-in-out;
+    margin-top: 10px; /* Ajusta el margen superior para bajar el logo */
 }
 
 .header .logo img:hover {
@@ -63,7 +64,6 @@ body {
 .navbar ul li a:hover {
     color: #ff5733; /* Cambia el color cuando pasas el cursor (naranja brillante) */
 }
-
 
 .login-signup button {
     margin-left: 10px;
@@ -94,6 +94,34 @@ body {
     padding: 20px 30px;
     height: 70vh; /* Hero ocupa el 70% de la pantalla */
     box-sizing: border-box;
+}
+
+.hero-carousel {
+    position: relative;
+    overflow: hidden;
+    height: 70vh; /* Ajusta este valor si es necesario */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Asegúrate de que se ajuste al contenedor */
+    overflow: hidden; /* Mantiene el contenido dentro de la vista */
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Ajusta la alineación del contenido */
+    align-items: center;
+    padding: 20px;
 }
 
 .hero-text {
@@ -180,6 +208,52 @@ body {
     border-radius: 50%; /* Bordes redondeados para que sea circular */
     margin-left: 50px;
 }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+    font-size: 18px;
+    z-index: 10; /* Asegúrate de que los botones estén encima del carrusel */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Indicadores para el carrusel  */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-indicators div {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-indicators div.active {
+    background-color: white;
+}
+
+/* Modificaciones para superponer las tarjetas sobre el hero */
 .info-cards {
     display: flex;
     justify-content: space-around;
@@ -187,13 +261,18 @@ body {
     background-color: #eef1f5;
     height: 30vh; /* Las tarjetas ocupan el 30% de la pantalla */
     box-sizing: border-box;
+    position: absolute; /* Posiciona las tarjetas de forma absoluta */
+    top: 80%; /* Posición relativa al hero */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra las tarjetas */
+    z-index: 5; /* Asegúrate de que estén por encima del hero */
 }
 
 .info-cards .card {
     background: white;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 30%;
 }
